@@ -41,10 +41,10 @@ const filters = data => {
               
               console.log(s.options[i].value)
               const query = s.options[i].value //capta el value de la region selecionada
-              if(query == ''){
+              if(query == ''){ //si no hay una region seleccionada, muestra todos los paises
                 banderillas(data)
               } else {
-                const arrayFiltrado = data.filter(item => item.region === query)
+                const arrayFiltrado = data.filter(item => item.region === query) //si hay una reion elegida, muestra los paises de esa region
                 banderillas(arrayFiltrado)
               }
               break;

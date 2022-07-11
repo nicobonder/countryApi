@@ -47,11 +47,15 @@ const banderillas = data => {
                 </p>
                 <p>
                     <b>Currency: </b>
-                    ${item.currencies}
+                    ${item.currencies[Object.keys(item.currencies)].name}
                 </p>
                 <p>
+                <b>Gini: </b>
+                ${item.gini[Object.keys(item.gini)]}
+            </p>
+                <p>
                     <b>Languages: </b>
-                    ${item.languages}
+                    ${item.languages[Object.keys(item.languages)]}
                 </p>
                 <b>
                     <a target="_blank" href="${item.maps.googleMaps}">Map</a>
