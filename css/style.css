@@ -49,6 +49,9 @@ body.dark-mode{
 .navbar{
     background-color: var(--color-bg-secundary);
     box-shadow: var(--box-shadow);
+    height: 4rem;
+    display: flex;
+    align-items: center;
 }
 
 .navbar-content{

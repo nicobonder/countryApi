@@ -21,9 +21,26 @@ const fetchData = async () => {
     }
 }
 
+
+
 const banderillas = data => {
+    
     let elementos = ''
     data.forEach(item => { 
+        const giniC = function(item) {
+            if(item.gini === undefined) {
+                return 'N/A'}    
+
+            if(item.gini.value !== "") {
+                return item.gini[Object.keys(item.gini)]
+            }
+        }
+        const capitalC = function(item) {
+            if(item.capital === undefined) {
+                return 'No capital city'
+            }
+            return item.capital
+        }
         elementos += `
         <article class="card"> 
             <img src="${item.flags.svg}" alt="" class="img-fluid">
@@ -35,7 +52,7 @@ const banderillas = data => {
                 </p>
                 <p>
                     <b>Capital: </b>
-                    ${item.capital}
+                    ${capitalC(item)}
                 </p>
                 <p>
                     <b>Region: </b>
@@ -50,12 +67,12 @@ const banderillas = data => {
                     ${item.currencies[Object.keys(item.currencies)].name}
                 </p>
                 <p>
-                <b>Gini: </b>
-                ${item.gini[Object.keys(item.gini)]}
-            </p>
-                <p>
                     <b>Languages: </b>
-                    ${item.languages[Object.keys(item.languages)]}
+                    ${Object.values(item.languages).toString().split(',').join(', ')}
+                </p>
+                <p>
+                    <b>Gini: </b>
+                    ${giniC(item)}
                 </p>
                 <b>
                     <a target="_blank" href="${item.maps.googleMaps}">Map</a>
@@ -67,3 +84,16 @@ const banderillas = data => {
     });
     banderas.innerHTML = elementos
 }
+
+/*<p>
+    <b>Gini: </b>
+    ${item.gini[Object.keys(item.gini)]}
+    </p>
+                <p>
+                    <b>Languages: </b>
+                    ${item.languages[Object.keys(item.languages)[0]]}, ${item.languages[Object.keys(item.languages)[1]]}
+                </p>
+
+
+    */
+

@@ -19,7 +19,13 @@ const fetchData = async () => {
 
 const banderillas = data => {
     let elementos = ''
-    data.forEach(item => { 
+    data.forEach(item => {
+        const capitalC = function(item) {
+            if(item.capital === undefined) {
+                return 'No capital city'
+            }
+            return item.capital
+        }
         elementos += `
         <article class="card"> 
             <img src="${item.flags.svg}" alt="" class="img-fluid">
@@ -31,7 +37,7 @@ const banderillas = data => {
                 </p>
                 <p>
                     <b>Capital: </b>
-                    ${item.capital}
+                    ${capitalC(item)}
                 </p>
                 <p>
                     <b>Region: </b>
