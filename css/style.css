@@ -18,7 +18,9 @@ body{
   font-family: 'Nunito', sans-serif;
   color: var(--color-text);
   background-color: var(--color-bg);
-  --color-bg: #bebebe;
+  background-color: #8EC5FC;
+background-image: linear-gradient(225deg, #8EC5FC 0%, #E0C3FC 100%);
+
   --color-bg-secundary: #fff;
   --color-text: #000;
 }
@@ -110,15 +112,21 @@ body.dark-mode{
 }
 
 .card {
-  background-color: var(--color-bg-secundary);
+  background-color: #d8d8d8;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   overflow: hidden;
 }
 
-.card img{
+.card-img{
+  width: 100%;
+ min-height: 12rem;
+}
+
+.card-img img{
   border-top-left-radius: 0.35rem;
   border-top-right-radius: 0.35rem;
+  max-height: 12rem;
 }
 
 .card-content{

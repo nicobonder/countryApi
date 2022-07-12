@@ -28,7 +28,9 @@ const banderillas = data => {
         }
         elementos += `
         <article class="card"> 
-            <img src="${item.flags.svg}" alt="" class="img-fluid">
+            <div class="card-img">
+                <img src="${item.flags.svg}" alt="" class="img-fluid">
+            </div>
             <div class="card-content">
                 <h3>${item.name.common}</h3>  
                 <p>
