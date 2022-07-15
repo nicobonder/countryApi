@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", e => {
 
 const fetchData = async () => {
     try {
-        const res = await fetch('api.json') //en lugar de api.json ahi puedo pegar la url de la api
+        const res = await fetch('https://restcountries.com/v3.1/all') //en lugar de api.json ahi puedo pegar la url de la api
         const data = await res.json()
         //console.log(data)
         banderillas(data)
