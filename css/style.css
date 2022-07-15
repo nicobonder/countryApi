@@ -18,17 +18,21 @@ body{
   font-family: 'Nunito', sans-serif;
   color: var(--color-text);
   background-color: var(--color-bg);
-  background-color: #8EC5FC;
-background-image: linear-gradient(225deg, #8EC5FC 0%, #E0C3FC 100%);
-
+  --color-bg: #bebebe;
   --color-bg-secundary: #fff;
   --color-text: #000;
+  --color-card: #8EC5FC;
+  --color-gradient: linear-gradient(45deg, #8EC5FC 40%, #E0C3FC 60%);
+  --color-link: rgb(3, 3, 96);
 }
 
 body.dark-mode{
   --color-bg: #212e37;
   --color-bg-secundary: #2b3743;
-    --color-text: #fff;
+  --color-card: #2b3743;
+  --color-text: #fff;
+  --color-gradient: none;
+  --color-link: #bebebe;
 }
 
 .container{
@@ -43,8 +47,8 @@ body.dark-mode{
 
 /*Espaciados*/
 .my-2{ /*esta clase es reutilizable y la puedo poner en cualquier lado que necesite este espacio*/
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1.4rem;
+    margin-bottom: 1.8rem;
 }
 
 /*Navbar*/
@@ -112,7 +116,8 @@ body.dark-mode{
 }
 
 .card {
-  background-color: #d8d8d8;
+  background-color: var(--color-card);
+  background-image: var(--color-gradient);  
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   overflow: hidden;
@@ -135,6 +140,11 @@ body.dark-mode{
 
 .card-content h3{
   margin-bottom: 2rem;
+}
+
+.card-content a{
+  color: var(--color-link);
+  text-decoration: none;
 }
 
 @media (max-width: 1000px){

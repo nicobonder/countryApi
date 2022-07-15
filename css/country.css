@@ -1,0 +1,43 @@
+body{
+    font-family: 'Nunito', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    --color-bg: #bebebe;
+    --color-bg-secundary: #fff;
+    --color-text: #000;
+    --color-card: #8EC5FC;
+    --color-gradient: linear-gradient(45deg, #8EC5FC 40%, #E0C3FC 60%);
+    --color-link: rgb(3, 3, 96);
+  }
+  
+  body.dark-mode{
+    --color-bg: #212e37;
+    --color-bg-secundary: #2b3743;
+    --color-card: #2b3743;
+    --color-text: #fff;
+    --color-gradient: none;
+    --color-link: #bebebe;
+  }
+
+.filter-content a{
+    color: var(--color-link);
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    text-decoration: none;
+}
+
+.detail{
+    margin-bottom: 1rem;
+}
+
+.detail h3{
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0 0 1.2rem 0;
+}
+
+.detail p{
+    font-size: 1.1rem;
+    margin: 0.7rem 0;
+}
