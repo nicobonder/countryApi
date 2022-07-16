@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", e => {
 
 const fetchData = async () => {
     try {
-        const res = await fetch('api.json') //en lugar de api.json ahi puedo pegar la url de la api
+        const res = await fetch('https://restcountries.com/v3.1/all') //en lugar de api.json ahi puedo pegar la url de la api
         const data = await res.json()
 
         const dataFiltered = data.filter(item => item.name.common === params)
@@ -35,6 +35,34 @@ const banderillas = data => {
                 return item.gini[Object.keys(item.gini)]
             }
         }
+
+        const subregionC = function(item) {
+            if(item.subregion === undefined) {
+                return 'N/A'
+            }
+            return item.subregion   
+        }
+
+        const currenciesC = function(item) {
+            if(item.currencies === undefined) {
+                return 'No official currencies'
+            }
+            return item.currencies[Object.keys(item.currencies)[0]].name 
+
+           
+        }
+
+        const languagesC = function(item) {
+            if(item.languages === null) {
+                return 'N/A'}    
+            if(item.languages === undefined) {
+                return 'No official languages'}  
+
+            if(item.languages.value !== null) {
+                return Object.values(item.languages).toString().split(',').join(', ')
+            }
+        }
+
         const capitalC = function(item) {
             if(item.capital === undefined) {
                 return 'No capital city'
@@ -60,16 +88,17 @@ const banderillas = data => {
                 </p>
                 <p>
                     <b>Subregion: </b>
-                    ${item.subregion}
+                    ${subregionC(item)}
+                </p>
+                <p>
+                <b>Languages: </b>
+                    ${languagesC(item)}
                 </p>
                 <p>
                     <b>Currency: </b>
-                    ${item.currencies[Object.keys(item.currencies)].name}
+                    ${currenciesC(item)}
                 </p>
-                <p>
-                    <b>Languages: </b>
-                    ${Object.values(item.languages).toString().split(',').join(', ')}
-                </p>
+               
                 <p>
                     <b>Gini: </b>
                     ${giniC(item)}
@@ -85,13 +114,15 @@ const banderillas = data => {
     banderas.innerHTML = elementos
 }
 
-/*<p>
-    <b>Gini: </b>
-    ${item.gini[Object.keys(item.gini)]}
+/*
+     <p>
+        <b>Languages: </b>
+        ${Object.values(item.languages).toString().split(',').join(', ')}
     </p>
-                <p>
-                    <b>Languages: </b>
-                    ${item.languages[Object.keys(item.languages)[0]]}, ${item.languages[Object.keys(item.languages)[1]]}
+                    <p>
+                    <b>Currency: </b>
+                    ${item.currencies[Object.keys(item.currencies)].name}
+                    
                 </p>
 
 
