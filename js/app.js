@@ -9,17 +9,24 @@ const fetchData = async () => {
         const res = await fetch('https://restcountries.com/v3.1/all') //en lugar de api.json ahi puedo pegar la url de la api
         const data = await res.json()
         //console.log(data)
-        banderillas(data)
-        clientForm(data) //es para poder usar la func creada en form.js y que tome la data
-        filters(data)
+        function SortArray(x, y) {
+            if(x.name.common < y.name.common) {return -1}
+            if(x.name.common > y.name.common) {return 1}
+            return 0
+        }
+        var sorted = data.sort(SortArray);
+        console.log(sorted);
+        banderillas(sorted)
+        clientForm(sorted) //es para poder usar la func creada en form.js y que tome la data
+        filters(sorted)
     } catch (error) {
         console.log(error)
     }
 }
 
-const banderillas = data => {
+const banderillas = sorted => {
     let elementos = ''
-    data.forEach(item => {
+    sorted.forEach(item => {
         const capitalC = function(item) {
             if(item.capital === undefined) {
                 return 'No capital city'
