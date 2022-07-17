@@ -41,3 +41,26 @@ body{
     font-size: 1.1rem;
     margin: 0.7rem 0;
 }
+
+@media (max-width: 480px){
+    .navbar-content{
+      font-size: 0.5rem;
+    }
+  
+    .form-search{
+      width: 100%; 
+      margin-bottom: 0.5rem;
+    }
+  
+    .form-search input{
+      width: 80%;
+    }
+  
+    .btn-dark-mode{
+      padding: 0;
+    }
+  
+    h1{
+      font-size: 0.8rem;
+    }
+  }
