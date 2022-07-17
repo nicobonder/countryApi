@@ -1,3 +1,10 @@
+const skeletons = document.querySelectorAll('.skeleton')
+skeletons.forEach((skeleton) => {
+setTimeout(() => {
+skeleton.classList.remove('skeleton')
+}, 2500)
+})
+
 const banderas = document.getElementById('banderas')
 
 document.addEventListener("DOMContentLoaded", e => {

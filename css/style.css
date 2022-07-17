@@ -148,6 +148,46 @@ body.dark-mode{
   text-decoration: none;
 }
 
+/*Skeleton*/
+.skeleton {
+position: relative;
+width: max-content;
+overflow: hidden;
+border-radius: 4px;
+background-color: #fff !important;
+color: transparent !important;
+border-color: #bebebe !important;
+user-select: none;
+cursor: default;
+}
+.skeleton img {
+opacity: 0;
+}
+
+.skeleton::after {
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+transform: translateX(-100%);
+background-image: linear-gradient(
+90deg,
+#fff 0,
+rgb(234, 232, 232) 20%,
+rgba(255, 255, 255, 0.5) 40%,
+#bebebe
+);
+animation: shimmer 1.5s infinite;
+content: '';
+}
+
+@keyframes shimmer {
+  100% {
+  transform: translateX(100%);
+  }
+}
+
 @media (max-width: 1000px){
   .grid{
     grid-template-columns: repeat(3, minmax(0, 1fr));
