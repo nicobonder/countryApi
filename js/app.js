@@ -1,10 +1,3 @@
-const skeletons = document.querySelectorAll('.skeleton')
-skeletons.forEach((skeleton) => {
-setTimeout(() => {
-skeleton.classList.remove('skeleton')
-}, 2500)
-})
-
 const banderas = document.getElementById('banderas')
 
 document.addEventListener("DOMContentLoaded", e => {
@@ -43,34 +36,37 @@ const banderillas = sorted => {
         elementos += `
         <article class="card"> 
             <div class="card-img">
-                <img src="${item.flags.svg}" alt="" class="img-fluid">
+                <img src="${item.flags.svg}" alt="" class="img-fluid ">
             </div>
             <div class="card-content">
-                <h3>${item.name.common}</h3>  
-                <p>
+                <div><h3>${item.name.common}</h3></div>
+                <div><p>
                     <b>Population: </b>
                     ${item.population}
-                </p>
-                <p>
+                </p></div>
+                <div><p>
                     <b>Capital: </b>
                     ${capitalC(item)}
-                </p>
-                <p>
+                </p></div>
+                <div><p>
                     <b>Region: </b>
                     ${item.region}
-                </p>
-              
-                <b>
+                </p></div>
+            
+                <div><b>
                     <a target="_blank" href="${item.maps.googleMaps}">Map</a>
-                </b>
-                <p>
+                </b></div>
+                <div><p>
                     <b>
                         <a href="country.html?name=${item.name.common}">Read More</a>
                     </b>
-                </p>
+                </p></div>
                 
             </div>
         </article>
+
+        
+       
         `
     });
     banderas.innerHTML = elementos
