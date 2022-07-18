@@ -42,7 +42,7 @@ const banderillas = sorted => {
                 <div><h3>${item.name.common}</h3></div>
                 <div><p>
                     <b>Population: </b>
-                    ${item.population}
+                    ${item.population.toLocaleString("es-ES")}
                 </p></div>
                 <div><p>
                     <b>Capital: </b>

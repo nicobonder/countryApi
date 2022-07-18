@@ -76,7 +76,7 @@ const banderillas = data => {
                 <h3>${item.name.common}</h3>  
                 <p>
                     <b>Population: </b>
-                    ${item.population}
+                    ${item.population.toLocaleString("es-ES")}
                 </p>
                 <p>
                     <b>Capital: </b>
