@@ -72,6 +72,8 @@ const banderillas = sorted => {
     banderas.innerHTML = elementos
 }
 
+
+
 //forEach ejecuta la function 1 vez por cada item
 //como ya tengo acceso a esos item de la data, los pinto y le digo que a cada elemento le concatene lo que tenia article en HTML
 //como tengo acceso a item de data puedo reemplazar el contenido que tenia en HTML y hacerlo dinamico
