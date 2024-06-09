@@ -13,11 +13,19 @@ html {
     box-sizing: inherit;
   }
 
-
 .skeleton{
   opacity: .7;
   animation: skeleton-loading 1s linear infinite alternate;
 }  
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 75%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 50%);
+  }
+}
 
 .skeleton-text{
   width: 100%;
@@ -31,15 +39,6 @@ html {
   height: 1.6rem;
   margin: 0.5rem 0 2.5rem 0;
   border-radius: 0.25rem;
-}
-
-@keyframes skeleton-loading {
-  0% {
-    background-color: hsl(200, 20%, 75%);
-  }
-  100% {
-    background-color: hsl(200, 20%, 50%);
-  }
 }
 
 body{

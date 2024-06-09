@@ -1,3 +1,5 @@
+/*Esta es una solucion sacada de 3wschool para poder darle estilo al filtro*/
+
 const filters = data => {
 
   var x, i, j, l, ll, selElmnt, a, b, c;
@@ -39,13 +41,14 @@ const filters = data => {
               }
               this.setAttribute("class", "same-as-selected");
               
+              /***Aca empiezo a trabajar***/
               console.log(s.options[i].value)
               const query = s.options[i].value //capta el value de la region selecionada
               if(query == ''){ //si no hay una region seleccionada, muestra todos los paises
                 banderillas(data)
               } else {
-                const arrayFiltrado = data.filter(item => item.region === query) //si hay una reion elegida, muestra los paises de esa region
-                banderillas(arrayFiltrado)
+                const arrayFiltrado = data.filter(item => item.region === query) //si hay una reion elegida,
+                banderillas(arrayFiltrado) //muestra los paises de esa region
               }
               break;
             }

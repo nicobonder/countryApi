@@ -1,6 +1,6 @@
 const banderas = document.getElementById('banderas')
-const query = new URLSearchParams(window.location.search)
-const params = query.get('name')
+const query = new URLSearchParams(window.location.search) //para obtener el parametro de la url desde la barra de busqueda. Toma lo que vendría después del "?"
+const params = query.get('name') //obtengo el parametro de la url a traves del parametro "name"
 console.log(params)
 
 document.addEventListener("DOMContentLoaded", e => {
@@ -9,10 +9,10 @@ document.addEventListener("DOMContentLoaded", e => {
 
 const fetchData = async () => {
     try {
-        const res = await fetch('https://restcountries.com/v3.1/all') //en lugar de api.json ahi puedo pegar la url de la api
+        const res = await fetch('https://restcountries.com/v3.1/all') // la url de la api
         const data = await res.json()
 
-        const dataFiltered = data.filter(item => item.name.common === params)
+        const dataFiltered = data.filter(item => item.name.common === params) // filtro los datos por el name.common de la data
 
         banderillas(dataFiltered)
         
@@ -25,10 +25,10 @@ const fetchData = async () => {
 
 const banderillas = data => {
     
-    let elementos = ''
-    data.forEach(item => { 
-        const giniC = function(item) {
-            if(item.gini === undefined) {
+    let elementos = '' //crea un elemento vacio
+    data.forEach(item => {  //recorre la data y le agrega toda esta info al elemento vacio
+        const giniC = function(item) { //como hay paises que no tienen toda la info
+            if(item.gini === undefined) { //tengo que hacer estas condicionales para que no salte error
                 return 'N/A'}    
 
             if(item.gini.value !== "") {
@@ -114,17 +114,4 @@ const banderillas = data => {
     banderas.innerHTML = elementos
 }
 
-/*
-     <p>
-        <b>Languages: </b>
-        ${Object.values(item.languages).toString().split(',').join(', ')}
-    </p>
-                    <p>
-                    <b>Currency: </b>
-                    ${item.currencies[Object.keys(item.currencies)].name}
-                    
-                </p>
-
-
-    */
 
